@@ -12,9 +12,9 @@ A book lib api created using Node.js, Express, TypeORM
 
 ## Project initialization
 
- 1- Download the project
+ ### 1- Download the project
 
- 2- Install the dependencies:
+ ### 2- Install the dependencies:
 
    ```javascript
     npm install
@@ -24,16 +24,16 @@ A book lib api created using Node.js, Express, TypeORM
     yarn
    ```
 
- 3- Make sure you have a Mysql instance and create a database called 'goBooks'. In case you want to use docker:
+ ### 3- Make sure you have a Mysql instance and create a database called 'goBooks'.In case you want to use docker:
 
   ```
     docker run --name root -e MYSQL_ROOT_PASSWORD=welcome -d mysql
    ```
 
- 4- Once created the mysql insntance you can set the database settings on the file 'ormconfig.json'
+ ### 4- Once created the mysql insntance you can set the database settings on the file 'ormconfig.json'
 
 
- 5- run the migrations using the comand:
+ ### 5- run the migrations using the comand:
 
   ```javascript
     yarn typeorm migration:run
@@ -43,7 +43,7 @@ A book lib api created using Node.js, Express, TypeORM
   ```javascript
     npm run typeorm migration:run
    ```
- 6- Start the project using the comand:
+ ### 6- Start the project using the comand:
 
   ```javascript
       npm dev
