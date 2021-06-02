@@ -6,30 +6,37 @@ export default class createClientsTable1588713348559
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'clients',
+        name: 'books',
         columns: [
           {
             name: 'id',
-            type: 'int',
+            type: 'varchar',
             isPrimary: true,
             isNullable: false,
             isGenerated: true,
-            generationStrategy: 'increment',
+            generationStrategy: 'uuid',
+            default: '(uuid())'
           },
           {
-            name: 'nome',
+            name: 'title',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'email',
+            name: 'subtitle',
             type: 'varchar',
-            isNullable: false,
           },
           {
-            name: 'dataDeNascimento',
-            type: 'timestamp',
-            isNullable: false,
+            name: 'description',
+            type: 'varchar',
+          },
+          {
+            name: 'author',
+            type: 'varchar',
+          },
+          {
+            name: 'coverPicture',
+            type: 'varchar',
           },
         ],
       }),
@@ -37,6 +44,6 @@ export default class createClientsTable1588713348559
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('clients');
+    await queryRunner.dropTable('books');
   }
 }

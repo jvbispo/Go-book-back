@@ -2,7 +2,7 @@
   "env": {
     "es6": true,
     "node": true,
-    "jest": true
+    "jasmine": true
   },
   "extends": ["airbnb-base",
     "plugin:@typescript-eslint/recommended",
@@ -21,7 +21,6 @@
   "plugins": ["@typescript-eslint","prettier"],
   "rules": {
     "eslint-no-und": "off",
-    "prettier/prettier":"error",
     "import/no-unresolved": "off",
     "@typescript-eslint/camelcase": "off",
     "no-useless-constructor": "off",
@@ -32,6 +31,12 @@
       "ignorePackages",
       {
         "ts": "never"
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
       }
     ]
   },

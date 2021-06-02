@@ -1,18 +1,16 @@
 import { Router } from 'express';
+import multer from 'multer';
+import uploadConfig from './config/upload';
+import BookController from './controllers/BookController';
 
-import ClientController from './controllers/ClientController';
-
-const clientController = new ClientController();
+const bookController = new BookController();
 const routes = Router();
+const upload = multer(uploadConfig.config.disk);
 
-routes.post('/cliente', clientController.post);
+routes.post('/book',  upload.single('avatar'),bookController.post);
 
-routes.get('/cliente', clientController.index);
+routes.get('/books', bookController.index);
 
-routes.get('/cliente/:id', clientController.show);
-
-routes.delete('/cliente/:id', clientController.delete);
-
-routes.put('/cliente/:id', clientController.update);
+routes.get('/book/:id', bookController.show);
 
 export default routes;

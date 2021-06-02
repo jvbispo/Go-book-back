@@ -1,0 +1,116 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GoBooks",
+    "description": "This is an Book CRUD API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "joao victor",
+      "email": "jv_bispo@hotmail.com"
+    }
+  },
+
+  "paths": {
+    "/book": {
+      "post": {
+        "tags": ["Book"],
+        "summary": "Create book",
+        "description": "create a new book",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "subtitle": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "author": {
+                    "type": "string"
+                  },
+                  "avatar": {
+                    "type": "file"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Book created"
+          },
+          "400": {
+            "description": "possible title already in use"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Book"],
+        "summary": "get book",
+        "description": "get a book",
+        "parameters": [
+          {
+          "in": "path",
+          "description": "book id that wanted to be returned",
+          "required": "true",
+          "name": "id",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+        "responses": {
+          "200": {
+            "description": "Book found"
+          },
+          "400": {
+            "description": "unvalid book id"
+          }
+        }
+      }
+    },
+    "/books": {
+      "get": {
+        "tags": ["Book"],
+        "summary": "get all books",
+        "description": "get all books created",
+        "parameters": [
+          {
+            "in": "query",
+            "description": "book page list",
+            "required": "false",
+            "name": "pagina",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "description": "book page list limit quantity",
+            "required": "false",
+            "name": "limite",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "books returned"
+          },
+          "500": {
+            "description": "possible title already in use"
+          }
+        }
+      }
+    }
+  }
+
+}

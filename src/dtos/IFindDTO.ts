@@ -1,6 +1,6 @@
-import Client from '../entities/Client';
+import Book from '../entities/Book';
 
 export default interface IFindDTO {
-  clients: Client[];
+  books: Book[];
   count: number;
 }
