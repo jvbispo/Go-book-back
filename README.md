@@ -25,6 +25,11 @@ A book lib api created using Node.js, Express, TypeORM
    ```
 
  ### 3- Make sure you have a Mysql instance on version 8 and create a database called 'goBooks'.
+ 
+ ** In case of privilages erros, here's a comand of mysql that might resolve it: **
+ ```
+  “ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'”
+ ``` 
 
 
  ### 4- Once created the mysql insntance you can set the database settings on the file 'ormconfig.json'
