@@ -24,11 +24,8 @@ A book lib api created using Node.js, Express, TypeORM
     yarn
    ```
 
- ### 3- Make sure you have a Mysql instance and create a database called 'goBooks'.In case you want to use docker:
+ ### 3- Make sure you have a Mysql instance on version 8 and create a database called 'goBooks'.
 
-  ```
-    docker run --name root -e MYSQL_ROOT_PASSWORD=welcome -d mysql
-   ```
 
  ### 4- Once created the mysql insntance you can set the database settings on the file 'ormconfig.json'
 
