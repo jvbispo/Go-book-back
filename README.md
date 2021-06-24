@@ -12,9 +12,9 @@ A book lib api created using Node.js, Express, TypeORM
 
 ## Project initialization
 
- 1- Download the project
+ ### 1- Download the project
 
- 2- Install the dependencies:
+ ### 2- Install the dependencies:
 
    ```javascript
     npm install
@@ -29,7 +29,7 @@ A book lib api created using Node.js, Express, TypeORM
  4- Once created the postgres insntance you can set the database settings on the file 'ormconfig.json'
 
 
- 5- run the migrations using the comand:
+ ### 5- run the migrations using the comand:
 
   ```javascript
     yarn typeorm migration:run
@@ -39,7 +39,7 @@ A book lib api created using Node.js, Express, TypeORM
   ```javascript
     npm run typeorm migration:run
    ```
- 6- Start the project using the comand:
+ ### 6- Start the project using the comand:
 
   ```javascript
       npm dev
