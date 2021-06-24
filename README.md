@@ -24,13 +24,9 @@ A book lib api created using Node.js, Express, TypeORM
     yarn
    ```
 
- 3- Make sure you have a Mysql instance and create a database called 'goBooks'. In case you want to use docker:
+ 3- Make sure you have a Postgres instance and create a database called 'goBooks'.
 
-  ```
-    docker run --name root -e MYSQL_ROOT_PASSWORD=welcome -d mysql
-   ```
-
- 4- Once created the mysql insntance you can set the database settings on the file 'ormconfig.json'
+ 4- Once created the postgres insntance you can set the database settings on the file 'ormconfig.json'
 
 
  5- run the migrations using the comand:

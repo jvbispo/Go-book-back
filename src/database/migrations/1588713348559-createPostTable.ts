@@ -15,7 +15,7 @@ export default class createClientsTable1588713348559
             isNullable: false,
             isGenerated: true,
             generationStrategy: 'uuid',
-            default: '(uuid())'
+            default: 'uuid_generate_v4()'
           },
           {
             name: 'title',
