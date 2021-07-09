@@ -4,43 +4,16 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 export default class createClientsTable1588713348559
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.createTable(
-      new Table({
-        name: 'books',
-        columns: [
-          {
-            name: 'id',
-            type: 'varchar',
-            isPrimary: true,
-            isNullable: false,
-            isGenerated: true,
-            generationStrategy: 'uuid',
-            default: 'uuid_generate_v4()'
-          },
-          {
-            name: 'title',
-            type: 'varchar',
-            isNullable: false,
-          },
-          {
-            name: 'subtitle',
-            type: 'varchar',
-          },
-          {
-            name: 'description',
-            type: 'varchar',
-          },
-          {
-            name: 'author',
-            type: 'varchar',
-          },
-          {
-            name: 'coverPicture',
-            type: 'varchar',
-          },
-        ],
-      }),
-    );
+    await queryRunner.query(`
+    CREATE TABLE "books" (
+      "id" varchar NOT NULL DEFAULT uuid_generate_v4(), 
+      "title" varchar NOT NULL,
+      "subtitle" varchar NOT NULL,
+      "description" varchar NOT NULL,
+      "author" varchar NOT NULL, 
+      "coverPicture" varchar NOT NULL, 
+      CONSTRAINT "PK_f3f2f25a099d24e12545b70b025" PRIMARY KEY ("id"));
+    `,[])
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {

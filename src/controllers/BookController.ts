@@ -44,7 +44,7 @@ class BookController {
     try {
       const createBookService = container.resolve(CreateBookService);
       const { title, subtitle, description, author} = req.body;
-      const coverPicture  = req.file.filename;
+      const coverPicture  = req?.file?.filename ?? '';
       const book = await createBookService.execute({
         title,
         author,
